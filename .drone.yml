@@ -1,0 +1,10 @@
+kind: pipeline
+type: docker
+name: flask_app
+
+steps:
+- name: build
+  image: flask_app
+  when:
+    branch:
+    - 4-create-drone-yml
