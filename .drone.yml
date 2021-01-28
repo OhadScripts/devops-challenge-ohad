@@ -19,6 +19,6 @@ steps:
     tags: latest
 
 - name: deploy
-  image: docker
+  image: docker/compose
   commands:
     - docker-compose up
