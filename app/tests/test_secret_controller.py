@@ -12,4 +12,4 @@ def test_secret_controller():
     result = list(result)
     result.sort()
 
-    assert expected_result != result
+    assert expected_result == result
