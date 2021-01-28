@@ -1,0 +1,9 @@
+flask_app:
+  build: .
+  ports:
+    - 5000:5000
+  volumes:
+    - ./app:/devops-challenge
+  env_file:
+    - .env
+  command: uwsgi --socket 0.0.0.0:5000 --protocol=http -w main:app
