@@ -6,4 +6,4 @@ flask_app:
     - ./app:/devops-challenge
   env_file:
     - .env
-  command: uwsgi --socket 0.0.0.0:5000 --protocol=http -w main:app
+  command: uwsgi --socket 0.0.0.0:5000 --protocol=http --processes 2 -w main:app
