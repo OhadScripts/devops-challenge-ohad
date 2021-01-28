@@ -17,9 +17,3 @@ steps:
         docker_password
     repo: scr1pter/devops-challenge
     tags: latest
-
-- name: deploy
-  image: docker
-  commands:
-    - docker-machine env dev
-    - docker-compose up
