@@ -1,9 +1,9 @@
 kind: pipeline
-name: default
+name: deploy_flask_app
 type: docker
 
 steps:
-- name: docker
+- name: build_and_push
   image: plugins/docker
   when:
     branch:
@@ -17,3 +17,8 @@ steps:
         docker_password
     repo: scr1pter/devops-challenge
     tags: latest
+
+- name: deploy
+  image: ubunru
+  commands:
+    - docker-compose up
