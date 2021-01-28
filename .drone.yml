@@ -1,0 +1,19 @@
+kind: pipeline
+name: deploy_flask_app
+type: docker
+
+steps:
+- name: build_and_push
+  image: plugins/docker
+  when:
+    branch:
+      - 4-create-drone-yml
+  settings:
+    username:
+      from_secret:
+        docker_username
+    password:
+      from_secret:
+        docker_password
+    repo: scr1pter/devops-challenge
+    tags: latest
