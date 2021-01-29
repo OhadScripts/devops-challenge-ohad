@@ -23,7 +23,7 @@ steps:
   image: docker/compose
   volumes:
     - name: docker_socket
-        path: /var/run/docker.sock
+      path: /var/run/docker.sock
   environment:
     AWS_ACCESS_KEY_ID:
       from_secret: aws_acess_key_id
