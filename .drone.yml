@@ -26,8 +26,3 @@ steps:
       path: /var/run/docker.sock
   commands:
     - docker-compose up
-
-volumes:
-    - name: docker_socket
-      host:
-        path: /var/run/docker.sock
