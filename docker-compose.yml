@@ -4,6 +4,8 @@ flask_app:
     - 5000:5000
   volumes:
     - ./app:/devops-challenge
-  env_file:
-    - .env
+  environment:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+    - REGION_NAME
   command: uwsgi --socket 0.0.0.0:5000 --protocol=http --processes 2 -w main:app
