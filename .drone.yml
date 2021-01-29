@@ -18,3 +18,16 @@ steps:
         docker_password
     repo: scr1pter/devops-challenge
     tags: latest
+
+- name: build
+  image: docker/compose
+  volumes:
+    - name: docker_socket
+      path: /var/run/docker.sock
+  commands:
+    - docker-compose up
+
+volumes:
+    - name: docker_socket
+      host:
+        path: /var/run/docker.sock
